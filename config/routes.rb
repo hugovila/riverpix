@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :likes
+
+  resources :notes
+
+  resources :posts
+
+  resources :users
+
+  resources :groups
+
   #get 'welcome/index'
 
   resources :riverpixs
