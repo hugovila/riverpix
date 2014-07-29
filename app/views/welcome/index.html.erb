@@ -1,117 +1,32 @@
-<link href="http://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet" type="text/css">
-
-<style>
-
-  body {
-    background: transparent;
-  }
-  .row h1,h4,p {
-    text-align: center;
-  }
-  .row div h2 {
-    background-color: black;
-    opacity: 0.6;
-  }
-  .row h1 {
-    font-family: 'Holtwood One SC', Arial, serif; font-weight: 400;
-    color: white;
-    font-size: 6rem;
-    text-shadow: 0 0 1px #5C5C5C;
-  }
-  .row h4 {
-    color: #fff;
-    outline-color: #fff;
-    text-shadow: 0 0 2px #5C5C5C;
-  }
-  .row p {
-    color: #fff;
-    outline-color: #fff;
-    text-shadow: 0 0 2px #5C5C5C;
-  }
-  .wrapper-absolute {
-    position: absolute;
-    top: 0;
-  }
-  .wrapper {
-    position: relative;
-    top: 50%;
-  }
-  .block {
-    text-align: center;
-    /* background: #c0c0c0; */
-    /* border: #a0a0a0 solid 1px; */
-    margin: 20px;
-  }
-  .block:before {
-    content: '';
-    display: inline-block;
-    height: 100%; 
-    vertical-align: middle;
-    margin-right: -0.25em; /* Adjusts for spacing */
-    
-    /* For visualization 
-    background: #808080; width: 5px;
-    */
-  }
-  .centered {
-    display: inline-block;
-    vertical-align: middle;
-    /*vwidth: 300px; */
-    padding: 10px 15px;
-    /* border: #a0a0a0 solid 1px; */
-    /* background: #f5f5f5; */
-  }
-
-
-  div.navbar {
-    background-color: transparent;
-    border: none;
-  }
-  .navbar-default .navbar-nav > li > a {
-    color: #fff;
-    text-shadow: 0 0 2px #5C5C5C;
-  }
-  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus  {
-    color: #5C5C5C;
-    text-shadow: 0 0 2px #fff;
-  }
-  .navbar-default .navbar-nav > li.active > a {
-    color: #000;
-    text-shadow: none;
-  }
-
-</style>
 
 <!-- <div class="navbar navbar-default navbar-fixed-top" role="navigation"> -->
 <div class="navbar navbar-default" role="navigation">
   <div class="container">
 
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand hidden" href="#">River Pix</a>
-      </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand hidden" href="#">River Pix</a>
+    </div>
 
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Login</a></li>
-          <li><a href="#about">terms</a></li>
-          <li><a href="#contact">privacy</a></li>
-        </ul>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Login</a></li>
+        <li><a href="#about">terms</a></li>
+        <li><a href="#contact">privacy</a></li>
+      </ul>
 
-        <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input placeholder="search" class="form-control" type="text">
-            </div>
-            <button type="submit" class="btn btn-success">Search</button>
-          </form>
-
-      </div>
-
+      <form class="navbar-form navbar-right" role="form">
+        <div class="form-group">
+          <input placeholder="search" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn btn-success">Search</button>
+      </form>
+    </div>
 
   </div>
 </div>
@@ -135,7 +50,7 @@
       <div><h1>river pix</h1></div>
       <h4>Follow the blogs you've been hearing about.</h4>
       <h4>Share the things you love.</h4>
-      <p><button type="button" class="btn btn-lg btn-success">Login to River Pix</button></p>
+      <p><a href="/posts/"><button type="button" class="btn btn-lg btn-success">Login to River Pix</button></a></p>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2 center-block">
     </div>
