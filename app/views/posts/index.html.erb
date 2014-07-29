@@ -13,43 +13,6 @@
   </thead>
 
   <tbody class="page">
-    <% @posts.each do |post| %>
-      <tr class="post">
-        <td><%= post.title %></td>
-        <td><%= post.author %></td>
-        <td><%= post.body %></td>
-        <td><%= post.image %></td>
-        <td><%= post.user %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
-<%= paginate @posts %>
-
-<hr>
-
-<h1>Listing posts Good</h1>
-
-<table id="posts">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody class="page">
     <%= render @posts %>
   </tbody>
 </table>
