@@ -46,3 +46,6 @@ gem 'spring',        group: :development
 
 # For Infinite Scroll
 gem 'kaminari'
+
+# For PaperClip
+gem "paperclip", "~> 4.2"
