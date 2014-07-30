@@ -6,6 +6,17 @@
 </p>
 
 <p>
+  <strong>Avatar Images:</strong>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-4"><%= image_tag @user.avatar.url %></div>
+    <div class="col-sm-4"><%= image_tag @user.avatar.url(:medium) %></div>
+    <div class="col-sm-4"><%= image_tag @user.avatar.url(:thumb) %></div>
+  </div>
+  </div>
+</p>
+
+<p>
   <strong>Group:</strong>
   <%= @user.group %>
 </p>
