@@ -52,3 +52,6 @@ gem 'kaminari', '~> 0.16.1'
 
 # For PaperClip
 gem 'paperclip', '~> 4.2'
+
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 3.2.4'
