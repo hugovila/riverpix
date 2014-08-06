@@ -22,3 +22,6 @@
 
 # Ignore backups .gitignore~
 .*~
+
+# Ignore template files
+*.template
