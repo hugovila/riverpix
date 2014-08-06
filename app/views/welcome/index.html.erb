@@ -15,7 +15,12 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Login</a></li>
+        <li class="active"><% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+          <% else %>
+          <%= link_to('Login', new_user_session_path)  %> 
+          <% end %>
+          </li>
         <li><a href="#about">terms</a></li>
         <li><a href="#contact">privacy</a></li>
       </ul>
@@ -33,16 +38,6 @@
 
 
 <div class="container">
-  <div class="row" style="display: none;">
-    <div class="block">
-      <div class="centered">
-        <div><h1>river pix</h1></div>
-        <h4>Follow the blogs you've been hearing about.</h4>
-        <h4>Share the things you love.</h4>
-        <p><button type="button" class="btn btn-lg btn-success">Login to River Pix</button></p>
-      </div>
-    </div>
-  </div>
   <div class="row" style="display: block;">
     <div class="col-sm-2 col-md-2 col-lg-2 center-block">
     </div>
@@ -50,9 +45,21 @@
       <div><h1>river pix</h1></div>
       <h4>Follow the blogs you've been hearing about.</h4>
       <h4>Share the things you love.</h4>
-      <p><a href="/posts/"><button type="button" class="btn btn-lg btn-success">Login to River Pix</button></a></p>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2 center-block">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3 center-block">
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6 center-block">
+
+      <!-- start render form sign_in -->
+      <%= render 'form_sign_up' %>
+      <!-- end render -->
+
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 center-block">
     </div>
   </div>
 </div>

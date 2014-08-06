@@ -1,0 +1,27 @@
+<!-- start form sign in -->
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <div>
+    <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %></div>
+
+    <div>
+    <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %></div>
+
+    <div><%= f.submit "Login to River Pix", :class => "btn btn-lg btn-success" %></div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="checkbox">
+        <%= f.check_box :remember_me, :style => "display: inline;" %> <%= f.label :remember_me, :style => "diplay: inline;" %>
+      </div>
+    <% end -%>
+
+<% end %>
+
+<%= link_to('Sign Up', new_user_registration_path)  %> | 
+<%= link_to('Forgot Password', new_user_password_path) %> | 
+
+<%= link_to('Sign In', user_session_path) %>
+
+<!-- end form sign in -->
+

@@ -1,18 +1,63 @@
-<h2>Sign up</h2>
+<div class="navbar navbar-default" role="navigation">
+  <div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand hidden" href="#">River Pix</a>
+    </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+          <% else %>
+          <%= link_to('Login', new_user_session_path)  %> 
+          <% end %>
+          </li>
+        <li><a href="#about">terms</a></li>
+        <li><a href="#contact">privacy</a></li>
+      </ul>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+      <form class="navbar-form navbar-right" role="form">
+        <div class="form-group">
+          <input placeholder="search" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn btn-success">Search</button>
+      </form>
+    </div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  </div>
+</div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 col-md-2 col-lg-2 center-block">
+    </div>
+    <div class="col-sm-8 col-md-8 col-lg-8 center-block">
+      <div><h1>river pix</h1></div>
+      <h4>Follow the blogs you've been hearing about.</h4>
+      <h4>Share the things you love.</h4>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2 center-block">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3 center-block">
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6 center-block">
+
+    <!-- start render form sign_up -->
+      <%= render 'form_sign_up' %>
+    <!-- end render -->
+
+ </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 center-block">
+    </div>
+  </div>
+</div>
