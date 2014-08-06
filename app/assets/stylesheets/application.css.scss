@@ -17,3 +17,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+div#error_explanation {
+    width: 100%;
+    border: 2px solid #F00;
+    padding: 7px 7px 0px;
+    margin-bottom: 20px;
+    background-color: #F0F0F0;
+}
+
+div.field_with_errors {
+    padding: 2px;
+    background-color: #F00;
+    display: block;
+}
