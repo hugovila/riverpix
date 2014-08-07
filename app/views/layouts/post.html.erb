@@ -8,7 +8,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand hidden" href="#">River Pix</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+            <% else %>
+            <%= link_to('Login', new_user_session_path)  %> 
+            <% end %>
+            </li>
+          <li><a href="#about">terms</a></li>
+          <li><a href="#contact">privacy</a></li>
+        </ul>
+
+        <form class="navbar-form navbar-right" role="form">
+          <div class="form-group">
+            <input placeholder="search" class="form-control" type="text">
+          </div>
+          <button type="submit" class="btn btn-success">Search</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
 
   <%= yield %>
 
