@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # resources :posts
+
+   resources :posts do
+     resources :notes
+   end
+
   resources :likes
 
   resources :notes
-
-  resources :posts
 
   resources :users
 
