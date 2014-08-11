@@ -1,3 +1,14 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post .row h1 {
+  font-family: 'Holtwood One SC', Arial, serif; font-weight: 400;
+  color: white;
+  font-size: 4rem;
+  text-shadow: 0 0 1px #5C5C5C;
+}
+
+.post .row h4 {
+  text-align: left;
+}

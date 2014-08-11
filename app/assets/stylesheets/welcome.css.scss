@@ -16,62 +16,25 @@ html {
 html body {
   background: transparent;
 }
-.row h1,h4,p {
+.welcome .row h1,h4 {
   text-align: center;
 }
-.row div h2 {
+.welcome .row div h2 {
   background-color: black;
   opacity: 0.6;
 }
-.row h1 {
+.welcome .row h1 {
   font-family: 'Holtwood One SC', Arial, serif; font-weight: 400;
   color: white;
   font-size: 6rem;
   text-shadow: 0 0 1px #5C5C5C;
 }
-.row h4 {
+.welcome .row h4 {
   color: #fff;
   outline-color: #fff;
   text-shadow: 0 0 2px #5C5C5C;
 }
-.row p {
-  color: #fff;
-  outline-color: #fff;
-  text-shadow: 0 0 2px #5C5C5C;
-}
-.wrapper-absolute {
-  position: absolute;
-  top: 0;
-}
-.wrapper {
-  position: relative;
-  top: 50%;
-}
-.block {
-  text-align: center;
-  /* background: #c0c0c0; */
-  /* border: #a0a0a0 solid 1px; */
-  margin: 20px;
-}
-.block:before {
-  content: '';
-  display: inline-block;
-  height: 100%; 
-  vertical-align: middle;
-  margin-right: -0.25em; /* Adjusts for spacing */
-  
-  /* For visualization 
-  background: #808080; width: 5px;
-  */
-}
-.centered {
-  display: inline-block;
-  vertical-align: middle;
-  /*vwidth: 300px; */
-  padding: 10px 15px;
-  /* border: #a0a0a0 solid 1px; */
-  /* background: #f5f5f5; */
-}
+
 
 div.navbar {
   background-color: transparent;
