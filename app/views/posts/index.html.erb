@@ -9,15 +9,16 @@
 
 
 <!-- Post -->
-<div class="container">
+<div id="posts" class="container">
+  <div class="page">
   
     
   <% @posts.each do |post| %>
 
 
-  <div class="row panel panel-info">
+  <div class="row panel panel-info post">
 
-    <div class="page col-sm-12 col-md-12 col-lg-12">
+    <div class="col-sm-12 col-md-12 col-lg-12">
       <h2><strong><%= post.title %></strong></h2>
       <p><strong>Modified </strong><%= post.updated_at.strftime("%d %B %Y at %H:%M") %><strong> by </strong> <em><%= post.user_id %></em></p>
       <p><%= post.body %></p>
@@ -38,6 +39,7 @@
 
   <% end %>
 
+</div>
 </div><!-- container ends -->
 
 <!--
