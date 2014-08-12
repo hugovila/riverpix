@@ -11,8 +11,14 @@ class PostsController < ApplicationController
   ## def index
   ##   @posts = Post.all
   ## end
+  ### def index
+  ###   @posts = Post.where(:user_id => 2)
+  ### end
+  # def index
+  #   @posts = Post.order(:created_at).page(params[:page])
+  # end
   def index
-    @posts = Post.order(:created_at).page(params[:page])
+    @posts = Post.where(:user_id => current_user).order(:created_at).page(params[:page])
   end
 
   # GET /posts/1
