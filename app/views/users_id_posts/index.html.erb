@@ -1,0 +1,50 @@
+
+<div class="container">
+  <div class ="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h1>Listing posts</h1>
+    </div>
+  </div><!-- ends row -->
+</div><!-- ends container -->
+
+
+<!-- Post -->
+<div id="posts" class="container">
+  <div class="page">
+  
+    
+  <% @posts.each do |post| %>
+
+
+  <div class="row panel panel-info post">
+
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h2><strong><%= post.title %></strong></h2>
+      <p><strong>Modified </strong><%= post.updated_at.strftime("%d %B %Y at %H:%M") %><strong> by </strong> <em><%= post.user_id %></em></p>
+      <p><%= post.body %></p>
+      <p><span class="glyphicon glyphicon-picture"></span><%= post.image %></p><hr>
+      
+      <p>
+      <%= link_to "Show", post, :class => "btn btn-success btn-sm", :role => "button" %> 
+    
+      <%= link_to "Edit", edit_post_path(post), :class => "btn btn-warning btn-sm", :role => "button" %> 
+    
+      <%= link_to "Remove", post, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger btn-sm", :role => "button" %>  
+    
+      <%= link_to 'New Note', new_note_path, :class => "btn btn-default btn-sm", :role => "button" %>
+      </p>
+
+      </div><!-- ends post col -->
+  </div><!-- ends post row -->
+
+  <% end %>
+
+</div>
+</div><!-- container ends -->
+
+<!--
+      <p>    <%= render @posts %> </p>
+  -->
+
+  <%= link_to 'New Post', new_post_path %>
+  <%= paginate @posts %>

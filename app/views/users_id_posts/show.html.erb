@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="row panel panel-info">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+
+      <!-- start show post -->
+
+      <p id="notice"><%= notice %></p>
+
+      <h2>
+        <strong><%= @post.title %></strong>
+      </h2>
+      <p> 
+        <strong>Modified </strong>
+        <%= @post.updated_at.strftime("%d %B %Y at %H:%M") %>
+        
+        <strong>by </strong>
+        <em><%= @post.user.name %></em>
+      </p>
+
+      <p class="lead">
+        <%= @post.body %>
+      </p>
+
+      <p>
+        <strong>Image</strong>
+        <%= @post.image %>
+      </p>
+
+      <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-warning btn-sm", :role => "button" %>
+      <%= link_to 'Back', posts_path, :class => "btn btn-default btn-sm", :role => "button" %>
+
+      <hr>
+
+      <!-- end show post -->
+      <!-- show comment for post -->
+
+      <% if @post.notes %>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <h5><strong>Comments</strong>&nbsp;<span class="badge"><%= @post.notes.count %></span></h5>
+          </div>
+        </div>
+      <% end %>
+
+      <% @post.notes.each do |note| %>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h5><strong><%= note.title %></strong></h5>
+                <p><%= note.body %></p><hr>
+                <div class="row">
+                <div class="col-sm-9 col-md-9 col-lg-9"
+                <p><small><%= note.created_at.strftime("%d %B %Y at %H:%M") %></small></p>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                <p><small><%= link_to 'Show', note, :class => "btn btn-success btn-xs", :role => "button" %>
+        <%= link_to 'Edit', edit_note_path(note), :class => "btn btn-warning btn-xs", :role => "button" %>
+        <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs", :role => "button" %></small></p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      <% end %>
+
+      
+
+      <!-- end comments for post -->
+
+      <!-- start form new note -->
+
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+          <h4><strong>Add a comment</strong></h4>
+
+          <%= form_for([@post, @post.notes.build]) do |f| %>
+            <% if @post.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@post.errors.count, "error") %> prohibited this comment from being saved:</h2>
+              <ul>
+                <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
+
+            <div>
+            <p><%= f.label :title %><br>
+            <%= f.text_field :title, autofocus: true, :class => "form-control", :placeholder => "Title" %></p></div>
+
+            <div>
+              <p><%= f.label :body %><br>
+              <%= f.text_area :body, autocomplete: "off", :class => "form-control", :placeholder => "Your comment" %></p></div>
+
+            <div>
+              <p><%= f.submit "Send comment", :class => "btn btn-success" %></p></div>
+          <% end %>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          &nbsp;
+        </div>
+      </div>
+
+      <!-- end form new note -->
+
+    </div>
+  </div>
+</div>

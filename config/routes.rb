@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
+
+
   devise_for :users
+  
+  #get 'users/:id/posts' => 'posts#user_index'
+  get 'users/:id/posts' => 'users_id_posts#index'
+
 
   # resources :posts
 
-   resources :posts do
-     resources :notes
-   end
+  resources :posts do
+  #  get 'posts'
+    resources :notes
+  end
 
   resources :likes
 

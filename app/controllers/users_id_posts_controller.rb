@@ -1,7 +1,7 @@
-class PostsController < ApplicationController
+class UsersIdPostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
 
   layout "post"
 
@@ -21,13 +21,13 @@ class PostsController < ApplicationController
   #   @posts = Post.where(:user_id => current_user).order(:created_at).page(params[:page])
   #   render :index
   # end
-  def user_index
-    @posts = Post.where(:user_id => params[:id]).order(:created_at).page(params[:page])
-    render :index
-  end
   # def index
-  #   @posts = current_user.posts.order(:created_at).page(params[:page])
+  #   @posts = Post.where(:user_id => params[:id]).order(:created_at).page(params[:page])
+  #   render :index
   # end
+  def index
+    @posts = current_user.posts.order(:created_at).page(params[:page])
+  end
 
 
 
