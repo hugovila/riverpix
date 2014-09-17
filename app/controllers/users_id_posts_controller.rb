@@ -8,9 +8,9 @@ class UsersIdPostsController < ApplicationController
   # GET /posts
   # GET /posts.json
 
-  def index
-    @posts = Post.all.order(:created_at).page(params[:page])
-  end
+  # def index
+  #   @posts = Post.all.order(:created_at).page(params[:page])
+  # end
   ### def index
   ###   @posts = Post.where(:user_id => 2)
   ### end
